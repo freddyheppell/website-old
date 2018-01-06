@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<article class="post">
+	<div class="container container-narrow">
+		<header>
+			<h1 class="display-4">{{ page.title }}</h1>
+			<div class="date">Posted on {{ page.date | date: "%-d %B %Y"}}</div>
+			<ul class="tags">
+				{% if page.tags.size > 0 %}
+				{% for tag in page.tags  %}
+				<li><a href="{{ "tags#" | append: tag | absolute_url }}" class="badge badge-secondary">#{{tag}}</a></li>
+				{% endfor %}
+				{% endif %}
+			</ul>
+		</header>
+		{{ content }}
+	</div>
+
+	<hr class="page-divider">
+
+	<div class="container comments">
+		<div class="row">
+			<div class="col-md-8 ml-auto mr-auto">
+				{% include disqus.html %}
+			</div>
+		</div>
+	</div>
+</article>

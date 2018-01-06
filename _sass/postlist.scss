@@ -1,0 +1,30 @@
+.PostList__entry {
+	padding: 1rem;
+	transition: background-color ease-in 0.15s;
+}
+
+.PostList__link {
+	color: $body-color;
+}
+
+.PostList__link:hover {
+	text-decoration: none;
+	color: $body-color;
+}
+
+.PostList__date {
+	color: $text-muted;
+}
+
+// POST LIST THEMES
+
+@import "utility";
+
+
+.theme-spark {
+	@include theme(#F6C56E);
+}
+
+.theme-jekyll {
+	@include theme(#D10000);
+}

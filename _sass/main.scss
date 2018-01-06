@@ -1,0 +1,27 @@
+@import "variables";
+@import "bootstrap/scss/bootstrap";
+
+@import "home";
+@import "navigation";
+@import "page";
+@import "post";
+@import "code";
+@import "footer";
+@import "postlist";
+@import "comments";
+@import "projects";
+
+@media (min-width: 48em) {
+	.container-narrow {
+		max-width: 46rem;
+	}
+}
+
+.icon-left {
+	margin-right: .25rem;
+}
+
+.img-display {
+    width: 70%;
+    margin-left: 15%;
+}

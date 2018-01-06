@@ -1,0 +1,25 @@
+article.post {
+	header {
+		padding-top: 3rem;
+		padding-bottom: 3rem;
+		text-align: center;
+
+		h1 {
+			font-weight: 700;
+		}
+
+		.date {
+			// font-style: italic;
+			color: $gray-700;
+		}
+
+		ul.tags {
+			list-style:none;
+			padding: 0.5rem 0 0 0;
+
+			li {
+				display: inline;
+			}
+		}
+	}
+}
