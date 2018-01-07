@@ -13,3 +13,24 @@
 		font-style: italic;
 	}
 }
+
+.home-links {
+	margin-top: 4rem;
+}
+
+.home-link {
+	.card-title {
+		margin-bottom: 0;
+	}
+
+	.icon-move {
+		transition: transform 0.2s ease-in-out;
+	}
+
+	&:hover {
+		.icon-move {
+			transform: translate(5px, 0px);
+		}
+	}
+}
+
