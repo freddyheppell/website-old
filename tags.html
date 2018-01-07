@@ -1,0 +1,27 @@
+---
+layout: page
+title: Tags
+---
+{% assign ordered_tags = site.tags | sort %}
+
+<div class="card" id="list">
+    <div class="card-body">
+        {% if site.tags.size>0 %}
+            {% for tag in ordered_tags %}
+            <a href="#{{ tag[0] }}" class="badge badge-secondary">#{{ tag[0]}}</a>
+            {% endfor %}
+        {% endif %}
+    </div>
+</div>
+
+{% for tag in ordered_tags %}
+<div class="card mt-3 tag-page-list" id="{{ tag[0] }}">
+    <div class="card-body">
+        <h5 class="card-title">#{{ tag[0] }}</h5>
+        {% for post in tag[1] %}
+        <a class="tag-post" href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        {% endfor %}
+    </div>
+</div>
+
+{% endfor%}
