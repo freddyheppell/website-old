@@ -26,3 +26,14 @@
     width: 70%;
     margin-left: 15%;
 }
+
+
+@media(max-width: 540px){
+  .display-4 {
+    font-size: 2rem;
+  }
+
+  .display-1 {
+	font-size: 4rem;
+  }
+}
