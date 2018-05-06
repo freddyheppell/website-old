@@ -16,7 +16,7 @@
 title: Freddy Heppell
 email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
-  Freddy Heppell is a Laravel, Python & PHP developer from the United Kingdom.
+  Freddy Heppell is a Laravel, Python & PHP developer from the UK.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
