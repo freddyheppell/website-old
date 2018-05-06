@@ -10,7 +10,7 @@
                 <li class="nav-item {% if page.title == "Home" %} active {% endif %}">
                     <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item {% if page.title == "Posts" %} active {% endif %}">
+                <li class="nav-item {% if page.title == "Posts" %} active {% endif %} {% if page.layout == "post" %} active {% endif %}">
                     <a class="nav-link" href="/posts/">Posts</a>
                 </li>
                 <li class="nav-item {% if page.title == "Projects" %} active {% endif %}">
