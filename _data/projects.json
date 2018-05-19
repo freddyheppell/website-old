@@ -12,7 +12,7 @@
             "icon": "<i class=\"far fa-lock-alt fa-fw\"></i>",
             "description": "An interactive demonstration of RSA.",
             "links":{
-                "Website":"https://rsa.iamoctopus.co/",
+                "Website":"https://rsa.freddyheppell.com/",
                 "Github":"https://github.com/freddinator/explainrsa"
             },
             "tags": [
@@ -26,7 +26,7 @@
             "icon": "<span class=\"fa-layers fa-fw\"><i class=\"far fa-comment\"></i><i class=\"fas fa-exclamation\" data-fa-transform=\"shrink-10 up-.5\"></i></span>",
             "description": "A Shakesperian insult generator.",
             "links":{
-                "Website":"https://insult.iamoctopus.co/",
+                "Website":"https://insult.freddyheppell.com/",
                 "Github":"https://github.com/freddinator/insult"
             },
             "tags": [
@@ -39,7 +39,7 @@
             "icon": "<i class=\"fab fa-youtube fa-fw\"></i>",
             "description":"Revolutionary money-making ideas.",
             "links":{
-                "Website":"https://fine.iamoctopus.co/",
+                "Website":"https://fine.freddyheppell.com/",
                 "Github":"https://github.com/freddinator/fine"
             },
             "tags": [
