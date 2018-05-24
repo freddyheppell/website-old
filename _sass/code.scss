@@ -1,9 +1,29 @@
-figure.highlight pre {
-	background-color: $gray-100;
-	padding: 1rem;
-	border-radius: $border-radius;
+code {
+  padding: 1px 5px;
+  color: $body-color;
 }
 
+figure.highlight pre {
+	font-size: $font-size-base * 0.9375;
+	border: 1px solid $gray-200;
+	border-radius: 3px;
+	background-color: $gray-100;
+}
+
+pre {
+  padding: 8px 12px;
+  overflow-x: auto;
+
+  > code {
+    border: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.language-bash .gp {
+  user-select: none;
+}
 
 // HIGHLIGHTING
 .hll { background-color: #ffffcc }

@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'Inter UI';
+    src: local('Inter UI Italic'), local('InterUI-Italic'),
+        url('InterUI-Italic.woff2') format('woff2'),
+        url('InterUI-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Inter UI';
+    src: local('Inter UI Black'), local('InterUI-Black'),
+        url('InterUI-Black.woff2') format('woff2'),
+        url('InterUI-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter UI';
+    src: local('Inter UI Bold Italic'), local('InterUI-BoldItalic'),
+        url('InterUI-BoldItalic.woff2') format('woff2'),
+        url('InterUI-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Inter UI';
+    src: local('Inter UI Medium'), local('InterUI-Medium'),
+        url('InterUI-Medium.woff2') format('woff2'),
+        url('InterUI-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter UI';
+    src: local('Inter UI Black Italic'), local('InterUI-BlackItalic'),
+        url('InterUI-BlackItalic.woff2') format('woff2'),
+        url('InterUI-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Inter UI';
+    src: local('Inter UI Medium Italic'), local('InterUI-MediumItalic'),
+        url('InterUI-MediumItalic.woff2') format('woff2'),
+        url('InterUI-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Inter UI';
+    src: local('Inter UI Regular'), local('InterUI-Regular'),
+        url('InterUI-Regular.woff2') format('woff2'),
+        url('InterUI-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Inter UI';
+    src: local('Inter UI Bold'), local('InterUI-Bold'),
+        url('InterUI-Bold.woff2') format('woff2'),
+        url('InterUI-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+

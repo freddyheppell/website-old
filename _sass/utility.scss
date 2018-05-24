@@ -24,7 +24,7 @@
 }
 
 @mixin theme($bgcolor) {
-	&:hover {
+	&.PostList__entry:hover {
 		background-color: $bgcolor;
 		$text-color: pick-visible-color($bgcolor, white, black);
 
@@ -35,4 +35,10 @@
 		}
 	}
 
+	&.PostHeader {
+		background-color: $bgcolor;
+		$text-color: pick-visible-color($bgcolor, white, black);
+
+		color: $text-color;
+	}
 }
