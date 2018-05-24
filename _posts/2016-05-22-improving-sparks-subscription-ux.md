@@ -16,7 +16,7 @@ You'll need a license for [Laravel Spark](https://spark.laravel.com), and you'll
 ## The Problem
 Here is the screen a user is sent to when they are not on a plan. The first plan "Basic" is automatically selected, but the "Selected" label can give the appearance that this is the plan that the user is on, when they are in fact on the Free plan, as indicated by the much smaller (and less noticable) text above.
 
-<img src="/img/posts/2016-05-22-improving-sparks-subscription-ux/old.png" alt="" class="img-display">
+<img src="/media/posts/2016-05-22-improving-sparks-subscription-ux/old.png" alt="" class="img-display">
 
 ## My Solution
 I have made two changes to fix this:
