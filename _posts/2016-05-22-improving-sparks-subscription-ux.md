@@ -6,7 +6,7 @@ excerpt:    Make Spark's plan selection clearer
 tags: spark laravel php
 theme: spark
 ---
-<div class="alert alert-info" role="alert">
+<div class="article-alert article-alert-info" role="alert">
 Note: This is untested in recent versions of Spark, however a similar modification should be possible.
 </div>
 
