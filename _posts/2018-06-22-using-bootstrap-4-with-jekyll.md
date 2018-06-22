@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Using Bootstrap 4 with Jekyll
-date:       2018-05-22
+date:       2018-06-22
 excerpt:    Use Bootstrap 4 with Jekyll and Gitlab Pages
 tags: jekyll bootstrap
 theme: jekyll
@@ -16,7 +16,7 @@ The easiest way to include Bootstrap's source in your project is using Git Submo
 $ git submodule add https://github.com/twbs/bootstrap.git
 {% endhighlight %}
 
-This will get the latest commit of Boostrap, which you probably don't want, so go to the [releases](https://github.com/twbs/bootstrap/releases) page and get the tag name of the latest release. This is shown with a tag icon on the left-hand side.
+This will get the latest commit of Boostrap. Typically you want to use the latest release, so go to the [releases](https://github.com/twbs/bootstrap/releases) page and get the tag name of the latest release. This is shown with a tag icon on the left-hand side.
 
 <img src="/media/posts/2018-05-22-using-bootstrap-4-with-jekyll/tag.png" alt="The tag name is shown on the left-hand-side of each release." class="img-thumbnail mx-auto d-block img-fluid">
 
@@ -102,10 +102,3 @@ If you're using a subdomain, use a CNAME record and the corresponding TXT record
 
 ## Updating your site
 When you want to update your site, just push to Gitlab. To check the progress of compiling your site, go to *CI/CD > Pipelines*. For each commit the current progress is shown, click it to see the live command line output.
-
-To update Boostrap to a new version, from your site's root directory run:
-{% highlight bash %}
-$ git submodule update --recursive --remote
-{% endhighlight %}
-
-Then cd into the `_sass/bootstrap` directory and `checkout` the latest release tag in the same way as when we originally cloned the repository. If you return to your site's main directory and run `git status`, you'll see that the directory is marked as having new commits. Now just commit your repository and push.
