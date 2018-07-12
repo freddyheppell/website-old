@@ -96,9 +96,11 @@ In your Gitlab project, go to *Settings > Pages* and add a new domain. Gitlab re
 
 You will be asked to add a TXT record to the domain to verify ownership, and create the correct DNS record pointing to Gitlab pages. You can get the details on the [Gitlab documentation site](https://docs.gitlab.com/ee/user/project/pages/getting_started_part_three.html#tl-dr).
 
-If you're hosting your site on the root domain (like this one) use the A record and corresponding TXT record.
+* If you're hosting your site on the root domain (like this one) use the A record and corresponding TXT record.
 
-If you're using a subdomain, use a CNAME record and the corresponding TXT record.
+* If you're using a subdomain, use a CNAME record and the corresponding TXT record.
+
+If you are using Cloudflare's flexible SSL, make sure to uncheck the _Force domains with SSL certificates to use HTTPS_ box on the Pages settings, otherwise your website will infinitely redirect.
 
 ## Updating your site
 When you want to update your site, just push to Gitlab. To check the progress of compiling your site, go to *CI/CD > Pipelines*. For each commit the current progress is shown, click it to see the live command line output.
