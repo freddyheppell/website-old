@@ -15,7 +15,6 @@
             "title": {{ post.title | smartify | jsonify }},
             "content_html": {{ post.content | jsonify }},
             "url": "{{ post.url | prepend: site.baseurl | prepend: site.url }}",
-            "summary": {{ post.excerpt | smartify | jsonify }},
             "date_published": "{{ post.date }}"
         }{% unless forloop.last == true %},{% endunless %}
 {% endfor %}
