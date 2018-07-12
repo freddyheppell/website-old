@@ -25,6 +25,22 @@ pre {
   user-select: none;
 }
 
+.ma {
+  font-family: $font-family-sans;
+  font-style: italic;
+}
+
+.mt {
+  font-family: $font-family-sans;
+  font-style: normal;
+}
+
+.eqn {
+  margin-top: 0.3rem;
+  margin-bottom: 1.3rem;
+  margin-left: 0.3rem;
+}
+
 // HIGHLIGHTING
 .hll { background-color: #ffffcc }
 .c { color: #999988; font-style: italic } /* Comment */

@@ -1,0 +1,150 @@
+---
+layout:     post
+title:      Understanding RSA
+date:       2018-07-12
+excerpt:    Make Spark's plan selection clearer
+tags: cryptography
+theme: cryptography
+---
+{% raw %}
+<div id="app">
+<p>ExplainRSA is an interactive demonstration of the RSA Algorithm, written in Javascript.</p>
+<p>Please note that:</p>
+<ul>
+    <li>Javascript's randomness is not cryptography safe, and therefore this tool cannot provide real security</li>
+    <li>This demo uses base primes of 1-50, which is very easily crackable. Real RSA algorithms use primes starting at 2<sup>511</sup> length.</li>
+    <li>Occasionally the demonstration can lock up if the primes generated are both large. This is due to the limitations of browsers. Again, real RSA algorithms are significantly faster.</li>
+    <li>The equations update live based on the initial values of <i class="ma">p</i> and <i class="ma">q</i>. You can click the Generate button repeatedly to change their values.</li>
+</ul>
+<p>To begin the process of using RSA, click the generate button below:</p>
+<button type="button" v-on:click="generate_keys" class="btn btn-primary">Generate Keys</button>
+<hr>
+<section v-if="q > 0" v-cloak transition="expand">
+    <h3>Generating Keys</h3>
+    <p>Firstly, two random primes, <i class="ma">p</i> and <i class="ma">q</i>, are generated. These would usually be very long, and would differ in length by a few numbers.</p>
+    <p class="eqn"><i class="ma">p</i> = {{ p }}</p>
+    <p class="eqn"><i class="ma">q</i> = {{ q }}</p>
+    <p>Now, we calculate <i class="ma">n</i>, where <i class="ma">n</i> = <i class="ma">pq</i>. <i class="ma">n</i> is used as a <i>modulus</i>. The modulus finds the remainder when you perform a division. For example 10 <i class="mt">mod</i> 3 is 1, because 3 goes into 10 three times, giving a remainder of 1.</p>
+    <p class="eqn"><i class="ma">n</i> = {{ p }} &times; {{ q }} = {{ n }}</i></p>
+    <p>Now, we calculate <i class="ma">&phi;</i> (the greek letter phi).</p>
+    <p class="eqn"><i class="ma">&phi;</i> = (<i class="ma">p</i>-1)(<i class="ma">q</i>-1) = ({{p}}-1)({{q}}-1) = {{ t }}</p>
+    <p>We generate another prime, <i class="ma">e</i>, between 1 and <i class="ma">&phi;</i>.</p>
+    <p class="eqn"><i class="ma">e</i> = {{ e }}</p>
+    <p>And finally, we calculate <i class="ma">d</i> with <i class="ma">d</i> = <i class="ma">e<sup>-1</sup></i> <i class="mt">mod</i> <i class="ma">&phi;</i></p>
+    <p class="eqn"><i class="ma">d</i> = {{ e }}<sup>-1</sup> <i class="mt">mod</i> {{ t }} = {{ d }}</p>
+    <p>We now have our two keys, public and private.</p>
+    <div class="row mb-3">
+        <div class="col-md-12">
+            <div class="card-deck">
+                <div class="card text-white bg-success text-xs-center">
+                    <div class="card-body">
+                        <h4 class="card-title">Public Key</h4>
+                        <div class="card-text">This key can be given to anyone, and they will use it to send you encrypted messages</div>
+                    </div>
+                    <div class="card-footer">
+                        <i class="ma">n</i> = {{n}}, 
+                        <i class="ma">e</i> = {{e}}
+                    </div>
+                </div>
+                <div class="card text-white bg-danger text-xs-center">
+                    <div class="card-body">
+                        <h4 class="card-title">Private Key</h4>
+                        <div class="card-text">This key is kept secret, and used to decrypt messages sent to you</div>
+                    </div>
+                    <div class="card-footer">
+                        <i class="ma">d</i> = {{d}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h3 id="encrypting">Encrypting a Letter</h3>
+    <p>You send your public key to your friend, Bob, who wants to encrypt a message with it. How can he do that?</p>
+    <p>We'll start sending a single letter. However, we encrypt it using an equation, so we need to turn it into a number.</p>
+    <label for="letterPick"><b>Pick the letter that Bob will send to you</b></label>
+    <select v-model="aOneLetterPlain" class="form-control custom-select" id="letterPick">
+        <option value="1">A - 1</option>
+        <option value="2">B - 2</option>
+        <option value="3">C - 3</option>
+        <option value="4">D - 4</option>
+        <option value="5">E - 5</option>
+        <option value="6">F - 6</option>
+        <option value="7">G - 7</option>
+        <option value="8">H - 8</option>
+        <option value="9">I - 9</option>
+        <option value="10">J - 10</option>
+        <option value="11">K - 11</option>
+        <option value="12">L - 12</option>
+        <option value="13">M - 13</option>
+        <option value="14">N - 14</option>
+        <option value="15">O - 15</option>
+        <option value="16">P - 16</option>
+        <option value="17">Q - 17</option>
+        <option value="18">R - 18</option>
+        <option value="19">S - 19</option>
+        <option value="20">T - 20</option>
+        <option value="21">U - 21</option>
+        <option value="22">V - 22</option>
+        <option value="23">W - 23</option>
+        <option value="24">X - 24</option>
+        <option value="25">Y - 25</option>
+        <option value="26">Z - 26</option>
+    </select>
+    <div v-if="aOneLetterPlain != 0" transition="expand" class="mt-3">
+        <p>We'll call this plaintext number <i class="ma">m</i>, and the encrypted number <i class="ma">c</i>.</p>
+        <p>Use the equation <i class="ma">c</i> = <i class="ma">m<sup>e</sup></i> <i class="mt">mod</i> <i class="ma">n</i></p>
+
+        <p class="eqn">{{ aOneLetterPlain }}<sup>{{e}}</sup> <i class="mt">mod</i> {{n}} = {{aOneLetterEncrypted}}</p>
+        <p>So, Bob will send you the number {{aOneLetterEncrypted}}.</p>
+
+        <h3>Decrypting a Letter</h3>
+        <p>Bob has sent you the number {{aOneLetterEncrypted}}. To decrypt it, you need to use your private key <i class="ma">d</i>. We'll call the encrypted message <i class="ma">c</i> and it's decrypted form <i class="ma">m</i>. Only you can decrypt this because only you have <i class="ma">d</i>, your private key.</p>
+        <p class="eqn"><i class="ma">m</i> = <i class="ma">c</i><sup><i class="ma">d</i></sup> <i class="mt">mod</i> <i class="ma">n</i></p>
+        <p class="eqn"><i class="ma">m</i> = {{ aOneLetterEncrypted }}<sup>{{ d }}</sup> <i class="mt">mod</i> {{n}} = {{ decrypt(aOneLetterEncrypted) }}</p>
+        <p>If you turn that number into a letter you get {{ getLetterFromNumber(aOneLetterPlain) }}</p>
+
+        <h3>Encrypting and Decrypting Multiple Letters</h3>
+        <p>The simplest way to encrypt and decrypt multiple numbers is to encrypt and decrypt them individually.</p>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Plaintext letter</th>
+                    <th>Plaintext number</th>
+                    <th>Encrypted number</th>
+                </tr>
+                <tr>
+                    <td>H</td>
+                    <td>8</td>
+                    <td>{{ encrypt(8) }}</td>
+                </tr>
+                <tr>
+                    <td>E</td>
+                    <td>5</td>
+                    <td>{{ encrypt(5) }}</td>
+                </tr>
+                <tr>
+                    <td>L</td>
+                    <td>12</td>
+                    <td>{{ encrypt(12) }}</td>
+                </tr>
+                <tr>
+                    <td>L</td>
+                    <td>12</td>
+                    <td>{{ encrypt(12) }}</td>
+                </tr>
+                <tr>
+                    <td>O</td>
+                    <td>15</td>
+                    <td>{{ encrypt(15) }}</td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</section>
+</div>
+{% endraw %}
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.27/vue.min.js" integrity="sha256-YogPEJrkzG2snap/2pnd2a0pToC4ox5KfDyQY+Om1o0=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.rawgit.com/peterolson/BigInteger.js/54fe8d54ddcc0842bbf201c40388e34e66fc5590/BigInteger.min.js" integrity="sha384-LR4uaUeb5J6b16qD3sbSvkYj89+WxT4RGJJb2BS2SeXYbGRJsxkKnMnIsJkEh/sP" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://rsa.freddyheppell.com/scripts.js"></script>
