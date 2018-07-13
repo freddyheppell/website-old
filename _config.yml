@@ -33,10 +33,11 @@ sass:
   sass_dir: _sass
   style: compressed
 
-gems:
+plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-autoprefixer
 exclude:
   - Gemfile
   - Gemfile.lock
+  - tasks.py
