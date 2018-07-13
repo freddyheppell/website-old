@@ -21,7 +21,7 @@
 
     <script src="https://cdn.jsdelivr.net/combine/npm/jquery@3.2.1,npm/popper.js@1.13.0,npm/bootstrap@4.1.0/dist/js/bootstrap.min.js"></script>
     {% for js in page.js %}
-    <script type="text/javascript" src="/js/{{js}}.js?{{site.time | date: '%s%N'}}"></script>
+    <script type="text/javascript" src="/js/{{js}}.js{% cachebust %}"></script>
     {% endfor %}
 </body>
 </html>
