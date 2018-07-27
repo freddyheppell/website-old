@@ -21,7 +21,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://freddyheppell.com" # the base hostname & protocol for your site, e.g. http://example.com
 
 twitter:
-  username: freddinator
+  username: freddyheppell
 
 lang: en_GB
 
