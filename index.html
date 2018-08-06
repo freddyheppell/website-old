@@ -3,11 +3,8 @@ title: Posts
 layout: default
 ---
 
-<article class="page">
+<article class="page mt-5">
 	<div class="container container-narrow">
-		<header>
-			<h1 class="display-4">Posts</h1>
-		</header>
 		<div class="PostList">
 			{% for post in site.posts %}
 			<a href="{{post.url}}" class="PostList__link">
