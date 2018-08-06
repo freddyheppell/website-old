@@ -7,6 +7,10 @@ tags: jekyll bootstrap
 theme: jekyll
 ---
 
+<div class="article-alert article-alert-info" role="alert">
+I now use <a href="https://www.netlify.com/" target="_blank">Netlify</a> for my site. To use Netlify follow these instructions up to the "Deploying to Gitlab Pages" section.
+</div>
+
 Starting with Bootstrap 4, building from the SASS source requires [Autoprefixer](https://github.com/postcss/autoprefixer). In this article I'll show how I configured my Jekyll site to autoprefix the stylesheets and deployed this on Gitlab pages.
 
 ## Cloning Bootstrap
