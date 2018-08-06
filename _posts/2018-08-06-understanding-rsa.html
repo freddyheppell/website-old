@@ -1,25 +1,19 @@
 ---
 layout:     post
 title:      Understanding RSA
-date:       2018-07-12
-excerpt:    Make Spark's plan selection clearer
+date:       2018-08-06
+excerpt:    Interactive RSA Demonstration
 tags: cryptography
 theme: cryptography
 ---
 {% raw %}
 <div id="app">
-<p>ExplainRSA is an interactive demonstration of the RSA Algorithm, written in Javascript.</p>
-<p>Please note that:</p>
-<ul>
-    <li>Javascript's randomness is not cryptography safe, and therefore this tool cannot provide real security</li>
-    <li>This demo uses base primes of 1-50, which is very easily crackable. Real RSA algorithms use primes starting at 2<sup>511</sup> length.</li>
-    <li>Occasionally the demonstration can lock up if the primes generated are both large. This is due to the limitations of browsers. Again, real RSA algorithms are significantly faster.</li>
-    <li>The equations update live based on the initial values of <i class="ma">p</i> and <i class="ma">q</i>. You can click the Generate button repeatedly to change their values.</li>
-</ul>
-<p>To begin the process of using RSA, click the generate button below:</p>
-<button type="button" v-on:click="generate_keys" class="btn btn-primary">Generate Keys</button>
-<hr>
-<section v-if="q > 0" v-cloak transition="expand">
+<p>RSA is an <em>Asymmetric</em> cryptography algorithm. Asymmetric cryptography means that the key you use to encrypt messages is differnet to the key that the recepient uses to decrypt messages.</p>
+<p>This is an interactive demonstration of the algorithm, powered by Vue.js. Click the button below to begin the demonstration. You can click the button multiple times to update the initial primes, and the whole demonstration will update.</p>
+<p>This demo uses very small primes, so it is not suitable for actual cryptographic use.</p>
+<button type="button" v-on:click="generate_keys" class="btn btn-primary btn-block"><span v-if="q>0">Regenerate</span><span v-else>Generate</span> Keys</button>
+<section v-if="q > 0" v-cloak transition="expand" class="mt-3">
+
     <h3>Generating Keys</h3>
     <p>Firstly, two random primes, <i class="ma">p</i> and <i class="ma">q</i>, are generated. These would usually be very long, and would differ in length by a few numbers.</p>
     <p class="eqn"><i class="ma">p</i> = {{ p }}</p>
@@ -139,6 +133,18 @@ theme: cryptography
                 </tr>
             </thead>
         </table>
+
+        <h3>Signatures</h3>
+        <p>Your public and private keys also work the opposite way, that is you can encrypt something with your private key and anyone can decrypt it with your public key. Doing this proves that you are the person that said the message.</p>
+        <p>You decide to send the number 10.</p>
+        <p><i class="ma">s</i> = <i class="ma">m</i><sup><i class="ma">d</i></sup> <i class="mt">mod</i> <i class="ma">n</i></p>
+        <p><i class="ma">s</i> = 10<sup>{{ d }}</sup> <i class="mt">mod</i> {{ n }} = {{ sign (10) }}</p>
+        <p>Only you know your private key, so only you can produce <i class="ma">s</i>.</p>
+        <p>Anybody can then decrypt the message using your public key.</p>
+        <p><i class="ma">u</i> = <i class="ma">s</i><sup><i class="ma">e</i></sup> <i class="mt">mod</i> <i class="ma">n</i></p>
+        <p><i class="ma">u</i> = {{ sign(10) }}<sup>{{ e }}</sup> <i class="mt">mod</i> {{ n }} = {{ unsign(sign(10)) }}</p>
+        <p>If you publish your message (10) along with the signed message (<i class="ma">s</i>), anyone can verify that it was you that sent the message. If someone else's private key was used, then <i class="ma">u</i>&ne;<i class="ma">m</i>.</p>
+        <p>In real cryptography you wouldn't sign the actual message, especially if the message is long. RSA only works if the message is shorter than the modulus. Instead, you'd use a <a href="https://en.wikipedia.org/wiki/Hash_function">hash function</a> first (which will always produce a relatively short message) and sign that.</p>
     </div>
 </section>
 </div>
@@ -147,4 +153,4 @@ theme: cryptography
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.27/vue.min.js" integrity="sha256-YogPEJrkzG2snap/2pnd2a0pToC4ox5KfDyQY+Om1o0=" crossorigin="anonymous"></script>
 <script type="text/javascript" src="https://cdn.rawgit.com/peterolson/BigInteger.js/54fe8d54ddcc0842bbf201c40388e34e66fc5590/BigInteger.min.js" integrity="sha384-LR4uaUeb5J6b16qD3sbSvkYj89+WxT4RGJJb2BS2SeXYbGRJsxkKnMnIsJkEh/sP" crossorigin="anonymous"></script>
-<script type="text/javascript" src="https://rsa.freddyheppell.com/scripts.js"></script>
+<script type="text/javascript" src="/assets/js/rsa.js{% cachebust %}"></script>
