@@ -12,7 +12,7 @@ theme: cryptography
 <p>This is an interactive demonstration of the algorithm, powered by Vue.js. Click the button below to begin the demonstration. You can click the button multiple times to update the initial primes, and the whole demonstration will update.</p>
 <p>This demo uses very small primes, so it is not suitable for actual cryptographic use.</p>
 <button type="button" v-on:click="generate_keys" class="btn btn-primary btn-block"><span v-if="q>0">Regenerate</span><span v-else>Generate</span> Keys</button>
-<section v-if="q > 0" v-cloak transition="expand" class="mt-3">
+<section v-if="q > 0" v-cloak transition="expand" class="mt-3" v-cloak>
 
     <h3>Generating Keys</h3>
     <p>Firstly, two random primes, <i class="ma">p</i> and <i class="ma">q</i>, are generated. These would usually be very long, and would differ in length by a few numbers.</p>
