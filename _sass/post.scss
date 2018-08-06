@@ -1,9 +1,13 @@
-article.post {
-	// h1, h2, h3, h4, h5, h6,
-	// p, blockquote, pre,
-	// ul, ol, dl, figure,
-	// %vertical-rhythm {
-	// 	margin-bottom: $spacing-unit / 2;
-	// }
+.footnotes {
+	margin-top: 5rem;
+}
 
+.footnotes ol li:target {
+	background-color: $highlight-color;
+}
+
+
+sup:target > a.footnote {
+	background-color: darken($highlight-color, 20%);
+	color: $body-color;
 }

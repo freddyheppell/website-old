@@ -1,6 +1,14 @@
+.PostList {
+	transform: translateX(-$postlist-border-width);
+}
+
 .PostList__entry {
 	padding: 1rem;
 	transition: background-color ease-in 0.15s;
+
+	h1 {
+		font-weight: bold;
+	}
 }
 
 .PostList__link {

@@ -24,6 +24,10 @@
 }
 
 @mixin theme($bgcolor) {
+	&.PostList__entry {
+		border-left: $bgcolor $postlist-border-width solid;
+	}
+
 	&.PostList__entry:hover {
 		background-color: $bgcolor;
 		$text-color: pick-visible-color($bgcolor, white, black);

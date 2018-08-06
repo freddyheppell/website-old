@@ -1,41 +1,26 @@
 ---
-title: Home
+title: Posts
 layout: default
 ---
 
-<div class="frontbanner">
-	<h1 class="display-1">Freddy Heppell</h1>
-	<p class="lead">Laravel, Python &amp; Java</p>
-</div>
-
-<div class="container container-narrow home-links">
-	<div class="row">
-		<div class="col-md-6">
-			<a href="/posts/" class="home-link">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title d-flex justify-content-between align-items-center"><span>Posts</span><i class="far fa-arrow-right icon-move"></i></h5>
-					</div>
+<article class="page">
+	<div class="container container-narrow">
+		<header>
+			<h1 class="display-4">Posts</h1>
+		</header>
+		<div class="PostList">
+			{% for post in site.posts %}
+			<a href="{{post.url}}" class="PostList__link">
+				<div class="PostList__entry theme-{{post.theme}}">
+					<h1>{{ post.title }}</h1>
+					<h6 class="PostList__date">{{ post.date | date: "%-d %B %Y"}}</h6>
 				</div>
 			</a>
+			{% endfor %}
 		</div>
-		<div class="col-md-6">
-			<a href="/projects/" class="home-link">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title d-flex justify-content-between align-items-center"><span>Projects</span><i class="far fa-arrow-right icon-move"></i></h5>
-					</div>
-				</div>
-			</a>
-		</div>
-		<!-- <div class="col-md-4">
-			<a href="/resources/">
-				<div class="card home-link">
-					<div class="card-body">
-						<h5 class="card-title d-flex justify-content-between align-items-center"><span>Resources</span><i class="far fa-arrow-right"></i></h5>
-					</div>
-				</div>
-			</a>
-		</div> -->
 	</div>
-</div>
+</article>
+
+
+
+
