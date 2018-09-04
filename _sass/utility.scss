@@ -30,7 +30,7 @@
 
 	&.PostList__entry:hover {
 		background-color: $bgcolor;
-		$text-color: pick-visible-color($bgcolor, white, black);
+		$text-color: pick-visible-color($bgcolor, white, $body-color);
 
 		color: $text-color;
 
@@ -41,7 +41,7 @@
 
 	&.PostHeader {
 		background-color: $bgcolor;
-		$text-color: pick-visible-color($bgcolor, white, black);
+		$text-color: pick-visible-color($bgcolor, white, $body-color);
 
 		color: $text-color;
 	}

@@ -1,0 +1,39 @@
+.Work {
+    margin-top: 2rem;
+
+    &__entry {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+
+        &--bnhs {
+            background-color: #CE0000;
+            color: white;
+        }
+
+        &--cavegame {
+            background-color: $gray-900;
+            color:white;
+        }
+
+        &--dh {
+            background-color: #f0f8ff;
+        }
+
+        &--misc {
+            background-color: $gray-300;
+        }
+
+    }
+
+    &__list {
+        list-style-type: none;
+        padding-left: 0;
+        
+        li {
+            text-transform: uppercase;
+            display: inline-block;
+            padding-right: 0.75rem;
+            font-size: 0.8rem;
+        }
+    }
+}

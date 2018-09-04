@@ -1,29 +1,27 @@
 .PostList {
 	transform: translateX(-$postlist-border-width);
-}
 
-.PostList__entry {
-	padding: 1rem;
-	transition: background-color ease-in 0.15s;
-
-	h1 {
+	&__heading {
 		font-weight: bold;
+		font-size: $h5-font-size;
+	}
+
+	&__entry {
+		padding: 0.5rem 0 0.5rem 1rem;
+		transition: background-color ease-in 0.15s;
+	}
+
+	&__link {
+		color: $body-color;
+
+		&:hover {
+			text-decoration: none;
+			color: $body-color;
+		}
+	}
+
+	&__date {
+		color: $text-muted;
+		margin-bottom: 0;
 	}
 }
-
-.PostList__link {
-	color: $body-color;
-}
-
-.PostList__link:hover {
-	text-decoration: none;
-	color: $body-color;
-}
-
-.PostList__date {
-	color: $text-muted;
-}
-
-// POST LIST THEMES
-
-@import "utility";

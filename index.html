@@ -5,12 +5,19 @@ layout: default
 
 <article class="page mt-5">
 	<div class="container container-narrow">
+		<p class="lead">
+			Hey, I'm Freddy Heppell. I'm a full stack developer from the UK.<br>
+			I work with Laravel, Vue.js, Python and Java.
+		</p>
+		<p class="lead">
+			Have a look at some of my <a href="/work">previous work</a>, or read some posts I've written:
+		</p>
 		<div class="PostList">
 			{% for post in site.posts %}
 			<a href="{{post.url}}" class="PostList__link">
 				<div class="PostList__entry theme-{{post.theme}}">
-					<h2>{{ post.title }}</h2>
-					<h6 class="PostList__date">{{ post.date | date: "%-d %B %Y"}}</h6>
+					<span class="PostList__heading">{{ post.title }}</span>
+					<span class="PostList__date">{{ post.date | date: "%-d %B %Y"}}</span>
 				</div>
 			</a>
 			{% endfor %}
