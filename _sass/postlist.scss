@@ -1,5 +1,6 @@
 .PostList {
 	transform: translateX(-$postlist-border-width);
+	margin-top: 3rem;
 
 	&__heading {
 		font-weight: bold;
