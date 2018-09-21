@@ -44,7 +44,9 @@
         });
     </script>
     {% endif %}
-        
+
+    {% include navtoggle.html %}
+         
 
     {% for js in page.js %}
     <script type="text/javascript" src="/assets/js/{{js}}.js{% cachebust %}"></script>

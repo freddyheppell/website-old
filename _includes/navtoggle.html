@@ -1,0 +1,69 @@
+<script type="text/javascript">
+/* Bootstrap Replacement
+
+   Inspired by and modified from Bootstrap without Jquery Project
+   https://github.com/tagawa/bootstrap-without-jquery
+*/
+
+var e = document.querySelector(".navbar-toggler");
+var t = document.querySelector(".navbar-collapse");
+var a = e.getAttribute("aria-expanded");
+
+function getMaxHeight(t) {
+  // Source: http://n12v.com/css-transition-to-from-auto/
+  var prevHeight = t.style.height;
+  t.style.height = 'auto';
+  var maxHeight = getComputedStyle(t).height;
+  t.style.height = prevHeight;
+  t.offsetHeight; // force repaint
+  return maxHeight;
+}
+
+/* Open the Menu after clicking the menu button
+ Only if the menu is current collapsed that is.
+*/
+
+e.onclick = function() {
+  if ( a == "false" ) {
+    t.classList.remove('collapse');
+    t.classList.add('collapsing');
+    t.classList.add('show');
+    e.classList.remove('collapsed');
+    e.setAttribute('aria-expanded', true);
+    t.style.height = getMaxHeight(t);
+  }
+}
+
+/* Collapse the menu after clicking anywhere, not just the menu button.
+ Only if the menu is already expanded, of course.
+*/
+
+document.onclick = function(){
+  if ( a == "true" ) {
+    t.classList.remove("collapse");
+    t.classList.remove("in");
+    t.classList.remove('show');
+    t.classList.add("collapsing");
+    e.classList.add("collapsed");
+    e.setAttribute("aria-expanded", false);
+    t.style.height = getComputedStyle(t).height;
+    t.offsetHeight,t.style.height="0px"
+  };
+};
+
+// Transition Handling
+t.addEventListener("transitionend", function() {
+  t.classList.remove('collapsing');
+  t.classList.add('collapse');
+
+  // Check whether the element is unhidden
+  if (t.style.height !== '0px') {
+    t.classList.add('in');
+    t.style.height = 'auto';
+  }
+
+  // Get 'aria-expanded' state
+  a = e.getAttribute("aria-expanded");
+});
+
+</script>
