@@ -38,6 +38,8 @@ GEM
       sass (~> 3.4)
     jekyll-seo-tag (2.3.0)
       jekyll (~> 3.3)
+    jekyll-sitemap (1.2.0)
+      jekyll (~> 3.3)
     jekyll-watch (2.0.0)
       listen (~> 3.0)
     kramdown (1.17.0)
@@ -77,6 +79,7 @@ DEPENDENCIES
   jekyll-autoprefixer
   jekyll-feed (~> 0.6)
   jekyll-seo-tag
+  jekyll-sitemap
   minima (~> 2.0)
   therubyracer
   tzinfo-data
@@ -85,4 +88,4 @@ RUBY VERSION
    ruby 2.5.1p57
 
 BUNDLED WITH
-   1.16.1
+   1.16.4
