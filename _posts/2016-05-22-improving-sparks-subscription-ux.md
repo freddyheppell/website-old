@@ -7,7 +7,7 @@ tags: spark laravel php
 theme: spark
 ---
 <div class="article-alert article-alert-info" role="alert">
-Note: This is untested in recent versions of Spark, however a similar modification should be possible.
+From Spark v6 onwards, this problem has been fixed.
 </div>
 
 ## Requirements
