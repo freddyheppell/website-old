@@ -12,6 +12,7 @@
 @import "comments";
 @import "projects";
 @import "tags";
+@import "type";
 @import "utility";
 @import "themes";
 @import "alert";
@@ -32,20 +33,10 @@
     margin-left: 15%;
 }
 
-
-@media(max-width: 540px){
-  .display-4 {
-    font-size: 2rem;
-  }
-
-  .display-1 {
-	font-size: 4rem;
-  }
-}
-
 .expand-transition {
   transition: all .3s ease;
 }
+
 /* .expand-enter defines the starting state for entering */
 /* .expand-leave defines the ending state for leaving */
 .expand-enter, .expand-leave {

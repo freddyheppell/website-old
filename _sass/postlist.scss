@@ -5,6 +5,7 @@
 	&__heading {
 		font-weight: bold;
 		font-size: $h5-font-size;
+		letter-spacing: $headings-letter-spacing;
 	}
 
 	&__entry {
@@ -23,6 +24,6 @@
 
 	&__date {
 		color: $text-muted;
-		margin-bottom: 0;
+		margin: 0 0 0 0.5rem;
 	}
 }

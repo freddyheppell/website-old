@@ -28,7 +28,6 @@ e.onclick = function() {
     t.classList.remove('collapse');
     t.classList.add('collapsing');
     t.classList.add('show');
-    e.classList.remove('collapsed');
     e.setAttribute('aria-expanded', true);
     t.style.height = getMaxHeight(t);
   }
@@ -41,10 +40,8 @@ e.onclick = function() {
 document.onclick = function(){
   if ( a == "true" ) {
     t.classList.remove("collapse");
-    t.classList.remove("in");
     t.classList.remove('show');
     t.classList.add("collapsing");
-    e.classList.add("collapsed");
     e.setAttribute("aria-expanded", false);
     t.style.height = getComputedStyle(t).height;
     t.offsetHeight,t.style.height="0px"
