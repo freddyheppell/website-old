@@ -5,6 +5,10 @@
         padding-top: 2.5rem;
         padding-bottom: 2.5rem;
 
+        &--datrifyio {
+            background-color: #85bb65;
+        }
+
         &--bnhs {
             background-color: #CE0000;
             color: white;
@@ -34,6 +38,19 @@
             display: inline-block;
             padding-right: 0.75rem;
             font-size: 0.8rem;
+        }
+    }
+
+    &__medal {
+        margin-bottom:1rem;
+
+        svg {
+            margin-right: 0.5em;
+        }
+
+        &--silver {
+            background-color: #c0c0c0;
+            color: $body-color;
         }
     }
 }
