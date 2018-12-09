@@ -1,2 +1,12 @@
-<div id="commento"></div>
-<script src="https://cdn.commento.io/js/commento.js"></script>
+<script type="text/javascript">
+    window.disqus_config = function () {
+        this.page.identifier = "{{ page.id }}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.title = "{{ page.title }}"
+        };
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://iamoctopus.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
