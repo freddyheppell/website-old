@@ -12,7 +12,7 @@ layout: default
 			{% for post in site.posts %}
 			<a href="{{post.url}}" class="PostList__link">
 				<div class="PostList__entry theme-{{post.theme}}">
-					<span class="PostList__heading">{{ post.title }}</span>
+					<span class="PostList__heading">{{ post.title | smartify }}</span>
 					<span class="PostList__date">{{ post.date | date: "%-d %B %Y"}}</span>
 				</div>
 			</a>

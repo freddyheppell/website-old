@@ -2,7 +2,7 @@
 layout: default
 ---
 <header class="PostHeader theme-{{page.theme}}">
-	<h1 class="display-4">{{ page.title }}</h1>
+	<h1 class="display-4">{{ page.title | smartify }}</h1>
 	<div class="date">Posted on {{ page.date | date: "%-d %B %Y"}}</div>
 	<ul class="tags">
 		{% if page.tags.size > 0 %}
