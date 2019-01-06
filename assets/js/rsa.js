@@ -1,5 +1,9 @@
-Vue.config.devtools = true;
+---
 
+---
+{% if jekyll.environment == "development" %}
+Vue.config.devtools = true;
+{% endif %}
 var letters = [
     "A",
     "B",
