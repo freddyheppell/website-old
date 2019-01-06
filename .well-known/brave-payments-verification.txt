@@ -1,0 +1,4 @@
+This is a Brave Payments publisher verification file.
+
+Domain: freddyheppell.com
+Token: 78c0b95bfe9f3549cdf6a6fc89b720f33343b31390eeef237feca008d995b797
