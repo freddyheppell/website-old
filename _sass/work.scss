@@ -27,6 +27,35 @@
             background-color: $gray-300;
         }
 
+        &--right {
+            @include media-breakpoint-up(md) {
+                text-align: right;
+
+                .container {
+                    padding-right: 3rem;
+                }
+            }
+        }
+
+        &--left {
+            @include media-breakpoint-up(md) {
+                .container {
+                    padding-left: 3rem;
+                }
+            }
+        }
+
+
+        .buttons {
+          margin-bottom: 1rem;  
+        }
+
+        @include media-breakpoint-up(md) {
+            .buttons {
+                margin-bottom: 0;
+            }
+        }
+
     }
 
     &__list {
