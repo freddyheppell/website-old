@@ -5,8 +5,8 @@
    https://github.com/tagawa/bootstrap-without-jquery
 */
 
-var e = document.querySelector(".navbar-toggler");
-var t = document.querySelector(".navbar-collapse");
+var e = document.querySelector('.navbar-toggler');
+var t = document.querySelector('.navbar-collapse');
 var a = e.getAttribute("aria-expanded");
 
 function getMaxHeight(t) {
@@ -39,9 +39,9 @@ e.onclick = function() {
 
 document.onclick = function(){
   if ( a == "true" ) {
-    t.classList.remove("collapse");
+    t.classList.remove('collapse');
     t.classList.remove('show');
-    t.classList.add("collapsing");
+    t.classList.add('collapsing');
     e.setAttribute("aria-expanded", false);
     t.style.height = getComputedStyle(t).height;
     t.offsetHeight,t.style.height="0px"
@@ -49,13 +49,12 @@ document.onclick = function(){
 };
 
 // Transition Handling
-t.addEventListener("transitionend", function() {
+t.addEventListener('transitionend', function() {
   t.classList.remove('collapsing');
   t.classList.add('collapse');
 
   // Check whether the element is unhidden
   if (t.style.height !== '0px') {
-    t.classList.add('in');
     t.style.height = 'auto';
   }
 
