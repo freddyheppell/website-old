@@ -7,4 +7,4 @@ title: Contact
 You can email me at **freddy@freddyheppell.com**.
 
 ## PGP
-My PGP fingerprint is <a href="https://pgp.key-server.io/0x7A4CA9001CE7C6EC">`0587 EBC0 980D E473 C57B  86C9 7A4C A900 1CE7 C6EC`</a>. Alternatively, you can contact me through <a href="https://keybase.io/theoctopus">Keybase</a>.
+My PGP fingerprint is <a href="/media/download/freddyheppell.asc">`0587 EBC0 980D E473 C57B  86C9 7A4C A900 1CE7 C6EC`</a>. Alternatively, you can contact me through <a href="https://keybase.io/theoctopus">Keybase</a>.
