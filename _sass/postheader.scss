@@ -1,16 +1,20 @@
 .PostHeader {
-	padding: 3rem 4rem 3rem 4rem;
+	padding: 3rem 0rem;
 	margin-bottom: 2rem;
-	text-align: center;
 
 	h1 {
 		font-weight: bold;
 	}
 
-	ul.tags {
+	.date {
+		font-style: italic;
+	}
+
+	.tags {
 		list-style:none;
 		padding: 0.5rem 0 0 0;
 		margin-top: 1rem;
+		display: inline;
 
 		li {
 			display: inline;

@@ -49,3 +49,13 @@
 [v-cloak] {
 	display: none;
 }
+
+body {
+  letter-spacing: -0.004em;
+  font-variant-ligatures: normal;
+  font-kerning: normal;
+}
+
+::selection {
+  background: lighten($primary, 40%); /* WebKit/Blink Browsers */
+}

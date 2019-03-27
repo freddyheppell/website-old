@@ -1,7 +1,7 @@
-$font-family-sans-serif: 'Roboto', 'Helvetica Neue', 'Liberation Sans', 'Arial', sans-serif;
+$enable-responsive-font-sizes: true;
+$font-family-sans-serif: 'Inter', 'Helvetica Neue', 'Liberation Sans', 'Arial', sans-serif;
 $font-family-sans: 'Georgia', 'Times New Roman', 'Times', serif;
 $headings-letter-spacing: -0.03em;
-$egyptian-blue: #1034a6;
 $line-height-base: 1.6;
 $spacing-unit: 40px;
 $highlight-color: #ffffe6;
@@ -12,3 +12,7 @@ $display2-weight: bold;
 $display3-weight: bold;
 $display4-weight: bold;
 $lead-font-weight: 400;
+$enable-rounded: false;
+
+$brand: #f94d00;
+$primary: $brand;

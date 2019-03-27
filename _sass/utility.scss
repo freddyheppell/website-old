@@ -38,11 +38,4 @@
 			color: $text-color;
 		}
 	}
-
-	&.PostHeader {
-		background-color: $bgcolor;
-		$text-color: pick-visible-color($bgcolor, white, $body-color);
-
-		color: $text-color;
-	}
 }

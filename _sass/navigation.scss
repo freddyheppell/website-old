@@ -1,9 +1,15 @@
 .navbar {
-	box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+	// box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+	border-top: $brand 5px solid;
+	padding: 0;
 }
 
-.navbar-brand {
+.navbar-brand, .navbar-brand:hover {
 	font-weight: bold;
+	background: linear-gradient($primary, lighten($primary, 15%));
+	color: white !important;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
 }
 
 .navbar-collapse {

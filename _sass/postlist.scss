@@ -1,9 +1,8 @@
 .PostList {
-	transform: translateX(-$postlist-border-width);
-	margin-top: 3rem;
+	transform: translateX(-1rem);
 
 	&__heading {
-		font-weight: bold;
+		font-weight: 500;
 		font-size: $h5-font-size;
 		letter-spacing: $headings-letter-spacing;
 	}
@@ -25,5 +24,11 @@
 	&__date {
 		color: $text-muted;
 		margin: 0 0 0 0.5rem;
+	}
+}
+
+.PostList__link:hover {
+	.PostList__entry {
+		background-color: lighten($primary, 30%);
 	}
 }
