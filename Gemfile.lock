@@ -34,6 +34,9 @@ GEM
       autoprefixer-rails (~> 6.3.6)
     jekyll-feed (0.9.2)
       jekyll (~> 3.3)
+    jekyll-last-modified-at (1.1.0)
+      jekyll (>= 3.7, < 5.0)
+      posix-spawn (~> 0.3.9)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
     jekyll-seo-tag (2.3.0)
@@ -54,6 +57,7 @@ GEM
       jekyll (~> 3.3)
     pathutil (0.16.1)
       forwardable-extended (~> 2.6)
+    posix-spawn (0.3.13)
     public_suffix (3.0.3)
     rb-fsevent (0.10.3)
     rb-inotify (0.9.10)
@@ -78,14 +82,12 @@ DEPENDENCIES
   jekyll
   jekyll-autoprefixer
   jekyll-feed (~> 0.6)
+  jekyll-last-modified-at
   jekyll-seo-tag
   jekyll-sitemap
   minima (~> 2.0)
   therubyracer
   tzinfo-data
-
-RUBY VERSION
-   ruby 2.6.0p0
 
 BUNDLED WITH
    1.17.2

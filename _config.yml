@@ -27,6 +27,11 @@ lang: en_GB
 
 permalink: :year/:month/:day/:title
 
+collections:
+  wiki:
+    output: true
+    layout: page
+
 # Build settings
 markdown: kramdown
 sass:
@@ -37,6 +42,7 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
   - jekyll-autoprefixer
+  - jekyll-last-modified-at
   - jekyll-sitemap
 exclude:
   - Gemfile

@@ -1,6 +1,6 @@
 ---
-layout: page
 title: Primes
+layout: wiki
 use_katex: true
 ---
 

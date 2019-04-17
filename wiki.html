@@ -1,0 +1,15 @@
+---
+layout: page
+title: Wiki
+---
+
+<p class="lead">Miscellaneous projects and notes</p>
+
+
+<ul>
+    {% for article in site.wiki %}
+        {% unless article.sitemap == false %}
+        <li><a href="/wiki/{{ article.slug }}">{{ article.title }}</a></li>
+        {% endunless %}
+    {% endfor %}
+</ul>

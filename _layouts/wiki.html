@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<article class="page wiki-page">
+	<div class="container container-narrow">
+		<header>
+            <h1 class="display-3"><a href="/wiki">Wiki</a> / {{ page.title }}</h1>
+            {% if page.sitemap == false %}
+            <span class="badge badge-secondary"><i class="fas fa-eye-slash"></i> Unlisted</span>
+            {% endif %}
+        </header>
+
+		{{ content }}
+	</div>
+</article>
