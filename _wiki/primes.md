@@ -10,6 +10,8 @@ Primes discovered through [PrimeGrid](https://www.primegrid.com/).
 
 Arithmetic progressions where each value is a prime number in the given range, where $$ \# $$ is the [primorial function](https://en.wikipedia.org/wiki/Primorial).
 
+* $$ 198699010224649591+132990904 \times 23 \# \times n $$ for $$ n=0 \dots 20 $$
+* $$ 14343243602832611+132836468 \times 23 \# \times n $$ for $$ n=0 \dots 20 $$
 * $$ 90800225937875341+102135507 \times 23 \# \times n $$ for $$ n=0 \dots 19 $$
 * $$ 123138995629134323+100516277 \times 23 \# \times n $$ for $$ n=0 \dots 19 $$
 * $$ 113949777820251911+100621320 \times 23 \# \times n $$ for $$ n=0 \dots 19 $$
