@@ -2,6 +2,7 @@
 title: Primes
 layout: wiki
 use_katex: true
+date: 2018-12-09
 ---
 
 Primes discovered through [PrimeGrid](https://www.primegrid.com/).
