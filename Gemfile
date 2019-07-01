@@ -11,7 +11,6 @@ source "https://rubygems.org"
 gem 'jekyll'
 gem 'jekyll-seo-tag'
 gem 'jekyll-autoprefixer'
-gem 'therubyracer'
 gem 'jekyll-sitemap'
 gem 'jekyll-last-modified-at'
 
