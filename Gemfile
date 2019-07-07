@@ -10,7 +10,6 @@ source "https://rubygems.org"
 # Happy Jekylling!
 gem 'jekyll'
 gem 'jekyll-seo-tag'
-gem 'jekyll-autoprefixer'
 gem 'jekyll-sitemap'
 gem 'jekyll-last-modified-at'
 
