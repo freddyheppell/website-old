@@ -17,7 +17,8 @@ function css() {
 
     var plugins = [
         uncss({
-            html: ['_site/index.html']
+            html: ['_site/**/*.html'],
+            ignore: ['.home-text svg']
         }),
         cssnano
     ];
