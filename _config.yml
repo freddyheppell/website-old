@@ -36,6 +36,7 @@ collections:
 markdown: kramdown
 sass:
   sass_dir: _sass
+  style: compressed
 
 plugins:
   - jekyll-feed
@@ -46,5 +47,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - tasks.py
+  - node_modules
 include:
   - _redirects
