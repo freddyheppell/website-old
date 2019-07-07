@@ -4,25 +4,13 @@ layout: default
 ---
 
 <article class="page homepage mt-5">
-	<div class="container container-narrow">
-		<p class="lead">
-		Hey, I’m Freddy Heppell. I’m a Computer Science undergraduate at The University of Sheffield. 
-		I’m the Technology Officer for <a href="https://hacksheffield.co" target="_blank">HackSheffield</a>.
-		</p>
-		<p>I’ve worked on projects for local and national charities, research projects, and hackathons.</p>
-		<section>
-			<h2>Writing</h2>
-
-			<div class="PostList">
-				{% for post in site.posts %}
-				<a href="{{post.url}}" class="PostList__link">
-					<div class="PostList__entry">
-						<span class="PostList__heading">{{ post.title | smartify }}</span>
-						<span class="PostList__date">{{ post.date | date: "%-d %B %Y"}}</span>
-					</div>
-				</a>
-				{% endfor %}
-			</div>
-		</section>
+	<div class="container">
+		<div class="lead display-4 home-text">
+			<p>Hey, I’m Freddy Heppell.<p>
+			<p>I’m a Computer Science undergraduate at <a href="https://sheffield.ac.uk/dcs">The University of Sheffield<i class="fas fa-external-link"></i></a>.</p>
+			<p>I’m the Technology Officer for <a href="https://hacksheffield.co" target="_blank">HackSheffield<i class="fas fa-external-link"></i></a>.</p>
+			<p>I’ve worked on projects for local and national charities, research projects, and hackathons.</p>
+		</div>
+		
 	</div>
 </article>

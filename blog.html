@@ -1,0 +1,15 @@
+---
+title: Blog
+layout: page
+---
+
+<div class="PostList">
+    {% for post in site.posts %}
+    <a href="{{post.url}}" class="PostList__link">
+        <div class="PostList__entry">
+            <span class="PostList__heading">{{ post.title | smartify }}</span>
+            <span class="PostList__date">{{ post.date | date: "%-d %B %Y"}}</span>
+        </div>
+    </a>
+    {% endfor %}
+</div>
