@@ -1,8 +1,7 @@
 var gulp = require('gulp'),
     shell = require('gulp-shell'),
     postcss = require('gulp-postcss'),
-    uncss = require('postcss-uncss')
-    cssnano = require('cssnano'),
+    uncss = require('postcss-uncss'),
     autoprefixer = require('gulp-autoprefixer'),
     glob = require('glob');
 
@@ -19,8 +18,7 @@ function css() {
         uncss({
             html: ['_site/**/*.html'],
             ignore: ['.home-text svg', '.WorkPageNav svg']
-        }),
-        cssnano
+        })
     ];
 
     return gulp.src('_site/assets/css/styles.css')

@@ -6,7 +6,6 @@
   },
   "author": "",
   "dependencies": {
-    "cssnano": "^4.1.10",
     "glob": "^7.1.4",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0",
