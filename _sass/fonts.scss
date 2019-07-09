@@ -10,16 +10,6 @@
 
 @font-face {
     font-family: 'Inter';
-    src: local('Inter Medium'), local('Inter-Medium'),
-        url('/assets/fonts/subset-Inter-Medium.woff2') format('woff2'),
-        url('/assets/fonts/subset-Inter-Medium.woff') format('woff');
-    font-display: swap;
-    font-weight: 500;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Inter';
     src: local('Inter Regular'), local('Inter-Regular'),
         url('/assets/fonts/subset-Inter-Regular.woff2') format('woff2'),
         url('/assets/fonts/subset-Inter-Regular.woff') format('woff');
