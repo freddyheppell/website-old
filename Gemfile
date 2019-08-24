@@ -8,7 +8,7 @@ source "https://rubygems.org"
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem 'jekyll'
+gem "jekyll", "~> 4.0"
 gem 'jekyll-seo-tag'
 gem 'jekyll-sitemap'
 gem 'jekyll-last-modified-at'
