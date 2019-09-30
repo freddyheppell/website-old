@@ -5,7 +5,7 @@
 
 .navbar-brand, .navbar-brand:hover {
 	font-weight: bold;
-	background-color: $primary;
+	background: linear-gradient($primary, lighten($primary, 12%));
 	color: white !important;
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
