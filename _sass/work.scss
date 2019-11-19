@@ -5,8 +5,13 @@
         padding-top: 2.5rem;
         padding-bottom: 2.5rem;
 
+        &--beanify {
+            background-color: #824bc4;
+            color: white;
+        }
+
         &--crime {
-            background-color: #3f46ad;
+            background-color: #1b4080;
             color: white;
         }
 
@@ -69,6 +74,10 @@
         a.text-link {
             color: inherit;
             text-decoration: underline;
+        }
+
+        img {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
 
     }
