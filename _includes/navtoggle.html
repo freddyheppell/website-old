@@ -1,65 +1,49 @@
 <script type="text/javascript">
-/* Bootstrap Replacement
+/*
+ * Based on 
+ * https://jasonbutz.info/2017/11/bootstrap-v4-responsive-navbars-without-jquery/
+ */
 
-   Inspired by and modified from Bootstrap without Jquery Project
-   https://github.com/tagawa/bootstrap-without-jquery
-*/
+let collapseElements = document.querySelectorAll('[data-toggle="collapse"]');
+const CLASS_SHOW = 'show';
+const CLASS_COLLAPSE = 'collapse';
+const CLASS_COLLAPSING = 'collapsing';
+const CLASS_COLLAPSED = 'collapsed';
+const ANIMATION_TIME = 350; // 0.35s
 
-var e = document.querySelector('.navbar-toggler');
-var t = document.querySelector('.navbar-collapse');
-var a = e.getAttribute("aria-expanded");
-
-function getMaxHeight(t) {
-  // Source: http://n12v.com/css-transition-to-from-auto/
-  var prevHeight = t.style.height;
-  t.style.height = 'auto';
-  var maxHeight = getComputedStyle(t).height;
-  t.style.height = prevHeight;
-  t.offsetHeight; // force repaint
-  return maxHeight;
+function handleCollapseElementClick(e) {
+    let el = e.currentTarget;
+    let collapseTargetId = el.dataset.target || el.href || null;
+    if (collapseTargetId) {
+        let targetEl = document.querySelector(collapseTargetId);
+        let isShown = targetEl.classList.contains(CLASS_SHOW) || targetEl.classList.contains(CLASS_COLLAPSING);
+        if(!isShown) {
+            targetEl.classList.remove(CLASS_COLLAPSE);
+            targetEl.classList.add(CLASS_COLLAPSING);
+            targetEl.style.height = 0
+            targetEl.classList.remove(CLASS_COLLAPSED);
+            setTimeout(() => {
+                targetEl.classList.remove(CLASS_COLLAPSING);
+                targetEl.classList.add(CLASS_COLLAPSE, CLASS_SHOW);
+                targetEl.style.height = '';
+            }, ANIMATION_TIME)
+            targetEl.style.height = targetEl.scrollHeight + 'px';
+        } else {
+            targetEl.style.height = `${targetEl.getBoundingClientRect().height}px`
+            targetEl.offsetHeight; // force reflow
+            targetEl.classList.add(CLASS_COLLAPSING);
+            targetEl.classList.remove(CLASS_COLLAPSE, CLASS_SHOW);
+            targetEl.style.height = '';
+            setTimeout(() => {
+                targetEl.classList.remove(CLASS_COLLAPSING);
+                targetEl.classList.add(CLASS_COLLAPSE);
+            }, ANIMATION_TIME)
+        }
+    }
 }
 
-/* Open the Menu after clicking the menu button
- Only if the menu is current collapsed that is.
-*/
-
-e.onclick = function() {
-  if ( a == "false" ) {
-    t.classList.remove('collapse');
-    t.classList.add('collapsing');
-    t.classList.add('show');
-    e.setAttribute('aria-expanded', true);
-    t.style.height = getMaxHeight(t);
-  }
-}
-
-/* Collapse the menu after clicking anywhere, not just the menu button.
- Only if the menu is already expanded, of course.
-*/
-
-document.onclick = function(){
-  if ( a == "true" ) {
-    t.classList.remove('collapse');
-    t.classList.remove('show');
-    t.classList.add('collapsing');
-    e.setAttribute("aria-expanded", false);
-    t.style.height = getComputedStyle(t).height;
-    t.offsetHeight,t.style.height="0px"
-  };
-};
-
-// Transition Handling
-t.addEventListener('transitionend', function() {
-  t.classList.remove('collapsing');
-  t.classList.add('collapse');
-
-  // Check whether the element is unhidden
-  if (t.style.height !== '0px') {
-    t.style.height = 'auto';
-  }
-
-  // Get 'aria-expanded' state
-  a = e.getAttribute("aria-expanded");
-});
+collapseElements.forEach((el) => {
+    el.addEventListener('click', handleCollapseElementClick)
+})
 
 </script>
