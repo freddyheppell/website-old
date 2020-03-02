@@ -1,33 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
+    
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    
     {% include header.html %}
-
+    
     {% seo %}
 </head>
 <body>
     {% include navbar.html %}
     {{ content }}
-
+    
     <footer>
-    	<hr>
-    	<div class="text-muted">&copy; Freddy Heppell 2016&ndash;{{ 'now' | date: "%y" }}. Code snippets are <a href="https://creativecommons.org/publicdomain/zero/1.0/"><i class="fab icon-left fa-creative-commons-zero"></i>CC0</a> unless noted otherwise.</div>
+        <hr>
+        <div class="text-muted">&copy; Freddy Heppell 2016&ndash;{{ 'now' | date: "%y" }}. Code snippets are <a href="https://creativecommons.org/publicdomain/zero/1.0/"><i class="fab icon-left fa-creative-commons-zero"></i>CC0</a> unless noted otherwise.</div>
     </footer>
-
-
+    
+    
     {% if page.use_katex == true %}
     <script src="/assets/js/vendor/jquery-3.3.1/jquery.slim.min.js"></script>
     <script src="/assets/js/vendor/katex-v0.10.1/katex.min.js"></script>    
-
+    
     <script src="/assets/js/katex.js"></script>
-
+    
     {% endif %}
-
+    
     {% include navtoggle.html %}
+    
+    <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
+    <script>
+        (function(f, a, t, h, o, m){
+            a[h]=a[h]||function(){
+                (a[h].q=a[h].q||[]).push(arguments)
+            };
+            o=f.createElement('script'),
+            m=f.getElementsByTagName('script')[0];
+            o.async=1; o.src=t; o.id='fathom-script';
+            m.parentNode.insertBefore(o,m)
+        })(document, window, '//stats.freddyheppell.com/tracker.js', 'fathom');
+        fathom('set', 'siteId', 'LCVOO');
+        fathom('trackPageview');
+    </script>
+    <!-- / Fathom -->
 </body>
 </html>
