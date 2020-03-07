@@ -30,6 +30,7 @@
     
     {% include navtoggle.html %}
     
+    {% if jekyll.environment == "production" %}
     <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
     <script>
         (function(f, a, t, h, o, m){
@@ -45,5 +46,6 @@
         fathom('trackPageview');
     </script>
     <!-- / Fathom -->
+    {% endif %}
 </body>
 </html>
